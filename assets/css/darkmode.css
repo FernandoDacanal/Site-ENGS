@@ -1,0 +1,123 @@
+/* ===== PURPLE ADMIN DARK MODE ===== */
+
+body.dark-theme {
+    background: #111827;
+}
+
+/* Navbar */
+body.dark-theme .navbar {
+    background: #1f2937 !important;
+}
+
+/* Sidebar */
+body.dark-theme .sidebar {
+    background: #1a2234 !important;
+}
+
+body.dark-theme .sidebar .nav-link {
+    color: #d1d5db !important;
+}
+
+body.dark-theme .sidebar .nav-link:hover {
+    background: #374151 !important;
+}
+
+body.dark-theme .sidebar .nav-link.active {
+    background: #8b5cf6 !important;
+    color: white !important;
+}
+
+/* Main content */
+body.dark-theme .content-wrapper {
+    background: #111827 !important;
+}
+
+/* Cards */
+body.dark-theme .card {
+    background: #1f2937 !important;
+    border: 1px solid #374151 !important;
+}
+
+body.dark-theme .card-title,
+body.dark-theme .card-description {
+    color: #f3f4f6 !important;
+}
+
+/* Text */
+body.dark-theme p,
+body.dark-theme span,
+body.dark-theme div,
+body.dark-theme label,
+body.dark-theme td,
+body.dark-theme th,
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme h4,
+body.dark-theme h5,
+body.dark-theme h6 {
+    color: #e5e7eb !important;
+}
+
+/* Tables */
+body.dark-theme .table {
+    color: #e5e7eb !important;
+}
+
+body.dark-theme .table td,
+body.dark-theme .table th {
+    border-color: #374151 !important;
+}
+
+/* Inputs */
+body.dark-theme .form-control,
+body.dark-theme .form-select {
+    background: #374151 !important;
+    color: white !important;
+    border-color: #4b5563 !important;
+}
+
+/* Dropdown */
+body.dark-theme .dropdown-menu {
+    background: #1f2937 !important;
+    border-color: #374151 !important;
+}
+
+body.dark-theme .dropdown-item {
+    color: #e5e7eb !important;
+}
+
+body.dark-theme .dropdown-item:hover {
+    background: #374151 !important;
+}
+
+/* Footer */
+body.dark-theme .footer {
+    background: #1f2937 !important;
+    color: #d1d5db !important;
+}
+
+/* Scrollbar */
+body.dark-theme ::-webkit-scrollbar {
+    width: 10px;
+}
+
+body.dark-theme ::-webkit-scrollbar-track {
+    background: #111827;
+}
+
+body.dark-theme ::-webkit-scrollbar-thumb {
+    background: #4b5563;
+}
+
+/* Transições */
+.navbar,
+.sidebar,
+.content-wrapper,
+.card,
+.footer,
+.form-control,
+.table,
+.dropdown-menu {
+    transition: all .25s ease;
+}

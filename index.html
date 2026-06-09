@@ -19,9 +19,31 @@
     <!-- endinject -->
     <!-- Layout styles -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="dark-theme-overrides.css">
+    <link rel="stylesheet" href="assets/css/darkmode.css">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="assets/images/favicon.png" />
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          const btn = document.getElementById("theme-toggle");
+          if (localStorage.getItem("theme") === "dark") {
+              document.body.classList.add("dark-theme");
+              btn.innerHTML = "☀️";
+          }
+          btn.addEventListener("click", function () {
+
+              document.body.classList.toggle("dark-theme");
+
+              const dark = document.body.classList.contains("dark-theme");
+
+              btn.innerHTML = dark ? "☀️" : "🌙";
+
+              localStorage.setItem(
+                  "theme",
+                  dark ? "dark" : "light"
+              );
+          });
+      });
+    </script>
   </head>
   <body>
     <div class="container-scroller">
@@ -46,10 +68,10 @@
             </form>
           </div>
           <ul class="navbar-nav navbar-nav-right">
-            <li class="nav-item nav-settings d-none d-lg-block">
-              <a class="nav-link" href="#">
-                <i class="mdi mdi-format-line-spacing"></i>
-              </a>
+            <li class="nav-item">
+              <button id="theme-toggle" class="btn btn-outline-secondary btn-sm">
+              🌙
+              </button>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-bs-toggle="dropdown">
@@ -388,8 +410,7 @@
           <!-- partial:partials/_footer.html -->
           <footer class="footer">
             <div class="d-sm-flex justify-content-center justify-content-sm-between">
-              <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2023 <a href="https://www.bootstrapdash.com/" target="_blank">BootstrapDash</a>. All rights reserved. Distributed by <a href="http://themewagon.com" target="_blank">ThemeWagon</a></span>
-              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i></span>
+              <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2026 <a href="sobrenos.html" target="_blank">Sobre nós</a>.</span>
             </div>
           </footer>
           <!-- partial -->
