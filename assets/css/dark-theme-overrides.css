@@ -1,0 +1,98 @@
+
+/* Dark Theme Overrides */
+
+:root{
+  --bg-primary:#121212;
+  --bg-secondary:#1e1e1e;
+  --bg-tertiary:#2a2a2a;
+  --text-primary:#e4e4e4;
+  --text-secondary:#b5b5b5;
+  --border-color:#3a3a3a;
+}
+
+html, body{
+  background:var(--bg-primary)!important;
+  color:var(--text-primary)!important;
+}
+
+.container-scroller,
+.page-body-wrapper,
+.main-panel,
+.content-wrapper,
+.card,
+.modal-content,
+.dropdown-menu,
+.navbar,
+.sidebar,
+.footer,
+.table,
+.list-group-item{
+  background-color:var(--bg-secondary)!important;
+  color:var(--text-primary)!important;
+}
+
+.card,
+.table,
+.modal-content,
+.dropdown-menu,
+.form-control,
+.form-select,
+.input-group-text,
+.list-group-item{
+  border-color:var(--border-color)!important;
+}
+
+p, span, div, label, li, td, th, h1, h2, h3, h4, h5, h6{
+  color:var(--text-primary)!important;
+}
+
+.text-muted{
+  color:var(--text-secondary)!important;
+}
+
+.form-control,
+.form-select,
+.input-group-text{
+  background:var(--bg-tertiary)!important;
+  color:var(--text-primary)!important;
+}
+
+.form-control:focus,
+.form-select:focus{
+  background:var(--bg-tertiary)!important;
+  color:var(--text-primary)!important;
+  border-color:#666!important;
+}
+
+.table{
+  color:var(--text-primary)!important;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd){
+  background-color:rgba(255,255,255,.03)!important;
+}
+
+.nav-link,
+.dropdown-item{
+  color:var(--text-primary)!important;
+}
+
+.dropdown-item:hover,
+.nav-link:hover{
+  background:rgba(255,255,255,.08)!important;
+}
+
+hr{
+  border-color:var(--border-color)!important;
+}
+
+pre, code{
+  background:#181818!important;
+  color:#d6d6d6!important;
+}
+
+.btn-light{
+  background:#2f2f2f!important;
+  border-color:#444!important;
+  color:#f0f0f0!important;
+}
