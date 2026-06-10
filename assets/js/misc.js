@@ -120,3 +120,12 @@ var lightColor = getComputedStyle(document.body).getPropertyValue('--light');
   
   });
 })(jQuery);
+
+// Load custom components dynamically
+(function() {
+  const isSubpage = window.location.pathname.includes('/pages/');
+  const basePath = isSubpage ? '../../' : './';
+  const script = document.createElement('script');
+  script.src = basePath + 'components/components-loader.js';
+  document.head.appendChild(script);
+})();

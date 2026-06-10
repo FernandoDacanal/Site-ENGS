@@ -1,0 +1,160 @@
+/* Search Recommendations Panel Styles */
+.search-field {
+  position: relative; /* Context for absolute positioning of the recommendations panel */
+}
+
+.search-recommendations-panel {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  width: 320px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  z-index: 1050;
+  padding: 15px 0;
+  font-family: inherit;
+  animation: searchFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: none;
+}
+
+[data-theme="dark"] .search-recommendations-panel {
+  box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes searchFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.panel-section {
+  padding: 0 15px;
+}
+
+.panel-section-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.panel-section-title i {
+  font-size: 14px;
+}
+
+.panel-separator {
+  height: 1px;
+  background-color: var(--border-color);
+  margin: 12px 0;
+}
+
+/* Recent searches list */
+.recent-list, .recommendations-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recent-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 8px;
+  margin: 2px -8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--text-color);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.recent-item:hover {
+  background-color: var(--bg-color);
+  color: #a855f7;
+}
+
+.recent-item .recent-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.recent-item .recent-text i {
+  color: var(--text-muted);
+}
+
+.recent-item .remove-recent {
+  color: var(--text-muted);
+  font-size: 14px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.recent-item .remove-recent:hover {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+}
+
+/* Recommendations list */
+.recommendation-item {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  margin: 2px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.recommendation-item:hover {
+  background-color: var(--bg-color);
+}
+
+.recommendation-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.2s ease;
+}
+
+.recommendation-item:hover .recommendation-title {
+  color: #a855f7;
+}
+
+.recommendation-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.recommendation-author {
+  font-weight: 500;
+}
+
+.recommendation-views {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}

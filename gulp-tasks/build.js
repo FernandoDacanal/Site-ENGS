@@ -13,7 +13,9 @@ function CopyAssetsToTheme() {
     let copyEntry = gulp.src('./index.html').pipe(gulp.dest('../dist/'));
     let copyPages = gulp.src('./pages/**/*').pipe(gulp.dest('../dist/pages'));
     let copyDocs = gulp.src('./docs/**/*').pipe(gulp.dest('../dist/docs/'));
-    return merge(copyImages, copyJs, copyVendors, copyFonts, copyEntry, copyThemeCss, copyDocs, copyPages, copyFonts)
+    let copyComponents = gulp.src('./components/**/*').pipe(gulp.dest('../dist/components/'));
+    let copyContext = gulp.src('./context/**/*').pipe(gulp.dest('../dist/context/'));
+    return merge(copyImages, copyJs, copyVendors, copyFonts, copyEntry, copyThemeCss, copyDocs, copyPages, copyFonts, copyComponents, copyContext)
 }
 
 gulp.task('replacePaths', () => {
