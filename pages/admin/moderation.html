@@ -4,15 +4,13 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Purple Admin</title>
+    <title>Painel de Moderação - Note G#</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="../../../assets/vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="../../../assets/vendors/ti-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="../../../assets/vendors/css/vendor.bundle.base.css">
-    <link rel="stylesheet" href="../../../assets/vendors/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../../assets/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="../../assets/vendors/font-awesome/css/font-awesome.min.css">
     <!-- endinject -->
-    <!-- Plugin css for this page -->
-    <!-- End Plugin css for this page -->
     <!-- inject:css -->
     <!-- endinject -->
     <!-- Layout styles -->
@@ -305,105 +303,62 @@
         <div class="main-panel">
           <div class="content-wrapper">
             <div class="page-header">
-              <h3 class="page-title"> Buttons </h3>
-              <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="#">UI Elements</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Buttons</li>
-                </ol>
-              </nav>
+              <h3 class="page-title">
+                <span class="page-title-icon bg-gradient-primary text-white me-2">
+                  <i class="mdi mdi-shield-account"></i>
+                </span> Painel de Moderação
+              </h3>
             </div>
             <div class="row">
               <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Gradient buttons</h4>
-                    <p class="card-description">Add class <code>.btn-gradient-{color}</code> for gradient buttons</p>
-                    <div class="template-demo">
-                      <button type="button" class="btn btn-gradient-primary btn-fw">Primary</button>
-                      <button type="button" class="btn btn-gradient-secondary btn-fw">Secondary</button>
-                      <button type="button" class="btn btn-gradient-success btn-fw">Success</button>
-                      <button type="button" class="btn btn-gradient-danger btn-fw">Danger</button>
-                      <button type="button" class="btn btn-gradient-warning btn-fw">Warning</button>
-                      <button type="button" class="btn btn-gradient-info btn-fw">Info</button>
-                      <button type="button" class="btn btn-gradient-light btn-fw">Light</button>
-                      <button type="button" class="btn btn-gradient-dark btn-fw">Dark</button>
-                      <button type="button" class="btn btn-link btn-fw">Link</button>
+                    <!-- Tabs Header -->
+                    <div class="moderation-tabs">
+                      <button class="moderation-tab-btn active" data-target="tab-denuncias">
+                        <i class="mdi mdi-alert-outline me-1"></i> Denúncias Recentes </button>
+                      <button class="moderation-tab-btn" data-target="tab-banidos">
+                        <i class="mdi mdi-account-off-outline me-1"></i> Usuários Banidos </button>
                     </div>
-                  </div>
-                  <div class="card-body">
-                    <h4 class="card-title">Rounded buttons</h4>
-                    <p class="card-description">Add class <code>.btn-rounded</code></p>
-                    <div class="template-demo">
-                      <button type="button" class="btn btn-gradient-primary btn-rounded btn-fw">Primary</button>
-                      <button type="button" class="btn btn-gradient-secondary btn-rounded btn-fw">Secondary</button>
-                      <button type="button" class="btn btn-gradient-success btn-rounded btn-fw">Success</button>
-                      <button type="button" class="btn btn-gradient-danger btn-rounded btn-fw">Danger</button>
-                      <button type="button" class="btn btn-gradient-warning btn-rounded btn-fw">Warning</button>
-                      <button type="button" class="btn btn-gradient-info btn-rounded btn-fw">Info</button>
-                      <button type="button" class="btn btn-gradient-light btn-rounded btn-fw">Light</button>
-                      <button type="button" class="btn btn-gradient-dark btn-rounded btn-fw">Dark</button>
-                      <button type="button" class="btn btn-link btn-rounded btn-fw">Link</button>
+                    <!-- Tab 1: Denuncias -->
+                    <div id="tab-denuncias" class="tab-content-panel active">
+                      <h4 class="card-title mb-4">Artigos Denunciados pelos Leitores</h4>
+                      <div class="table-responsive">
+                        <table class="table table-hover table-striped">
+                          <thead>
+                            <tr>
+                              <th>Título do Artigo</th>
+                              <th>Autor</th>
+                              <th>Motivo da Denúncia</th>
+                              <th>Data</th>
+                              <th>Ações</th>
+                            </tr>
+                          </thead>
+                          <tbody id="reports-table-body">
+                            <!-- JS loaded -->
+                          </tbody>
+                        </table>
+                      </div>
                     </div>
-                  </div>
-                  <div class="card-body">
-                    <h4 class="card-title">Outlined buttons</h4>
-                    <p class="card-description">Add class <code>.btn-outline-{color}</code> for outline buttons</p>
-                    <div class="template-demo">
-                      <button type="button" class="btn btn-outline-primary btn-fw">Primary</button>
-                      <button type="button" class="btn btn-outline-secondary btn-fw">Secondary</button>
-                      <button type="button" class="btn btn-outline-success btn-fw">Success</button>
-                      <button type="button" class="btn btn-outline-danger btn-fw">Danger</button>
-                      <button type="button" class="btn btn-outline-warning btn-fw">Warning</button>
-                      <button type="button" class="btn btn-outline-info btn-fw">Info</button>
-                      <button type="button" class="btn btn-outline-light text-black btn-fw">Light</button>
-                      <button type="button" class="btn btn-outline-dark btn-fw">Dark</button>
-                      <button type="button" class="btn btn-link btn-fw">Link</button>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <h4 class="card-title">Single color buttons</h4>
-                    <p class="card-description">Add class <code>.btn-{color}</code> for buttons in theme colors</p>
-                    <div class="template-demo">
-                      <button type="button" class="btn btn-primary btn-fw">Primary</button>
-                      <button type="button" class="btn btn-secondary btn-fw">Secondary</button>
-                      <button type="button" class="btn btn-success btn-fw">Success</button>
-                      <button type="button" class="btn btn-danger btn-fw">Danger</button>
-                      <button type="button" class="btn btn-warning btn-fw">Warning</button>
-                      <button type="button" class="btn btn-info btn-fw">Info</button>
-                      <button type="button" class="btn btn-light btn-fw">Light</button>
-                      <button type="button" class="btn btn-dark btn-fw">Dark</button>
-                      <button type="button" class="btn btn-link btn-fw">Link</button>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <h4 class="card-title">Inverse buttons</h4>
-                    <p class="card-description">Add class <code>.btn-inverse-{color} for inverse buttons</code></p>
-                    <div class="template-demo">
-                      <button type="button" class="btn btn-inverse-primary btn-fw">Primary</button>
-                      <button type="button" class="btn btn-inverse-secondary btn-fw">Secondary</button>
-                      <button type="button" class="btn btn-inverse-success btn-fw">Success</button>
-                      <button type="button" class="btn btn-inverse-danger btn-fw">Danger</button>
-                      <button type="button" class="btn btn-inverse-warning btn-fw">Warning</button>
-                      <button type="button" class="btn btn-inverse-info btn-fw">Info</button>
-                      <button type="button" class="btn btn-inverse-light btn-fw">Light</button>
-                      <button type="button" class="btn btn-inverse-dark btn-fw">Dark</button>
-                      <button type="button" class="btn btn-link btn-fw">Link</button>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <h4 class="card-title">Normal buttons</h4>
-                    <p class="card-description">Use any of the available button classes to quickly create a styled button. </p>
-                    <div class="template-demo">
-                      <button type="button" class="btn btn-gradient-primary">Primary</button>
-                      <button type="button" class="btn btn-gradient-secondary">Secondary</button>
-                      <button type="button" class="btn btn-gradient-success">Success</button>
-                      <button type="button" class="btn btn-gradient-danger">Danger</button>
-                      <button type="button" class="btn btn-gradient-warning">Warning</button>
-                      <button type="button" class="btn btn-gradient-info">Info</button>
-                      <button type="button" class="btn btn-gradient-light">Light</button>
-                      <button type="button" class="btn btn-gradient-dark">Dark</button>
-                      <button type="button" class="btn btn-link">Link</button>
+                    <!-- Tab 2: Banidos -->
+                    <div id="tab-banidos" class="tab-content-panel">
+                      <h4 class="card-title mb-4">Histórico de Usuários com Acesso Suspenso</h4>
+                      <div class="table-responsive">
+                        <table class="table table-hover table-striped">
+                          <thead>
+                            <tr>
+                              <th>ID</th>
+                              <th>Nome</th>
+                              <th>E-mail</th>
+                              <th>Data do Banimento</th>
+                              <th>Ações</th>
+                            </tr>
+                          </thead>
+                          <tbody id="banned-table-body">
+                            <!-- JS loaded -->
+                          </tbody>
+                        </table>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -414,7 +369,7 @@
           <!-- partial:../../partials/_footer.html -->
           <footer class="footer">
             <div class="d-sm-flex justify-content-center justify-content-sm-between">
-              <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2023 <a href="https://www.bootstrapdash.com/" target="_blank">BootstrapDash</a>. All rights reserved.</span>
+              <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2023 <a href="https://www.bootstrapdash.com/" target="_blank">BootstrapDash</a>. All rights reserved. Distributed by <a href="http://themewagon.com" target="_blank">ThemeWagon</a></span>
               <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i></span>
             </div>
           </footer>
@@ -426,16 +381,14 @@
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
-    <script src="../../../assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
-    <!-- Plugin js for this page -->
-    <!-- End plugin js for this page -->
     <!-- inject:js -->
-    <script src="../../../assets/js/off-canvas.js"></script>
-    <script src="../../../assets/js/misc.js"></script>
-    <script src="../../../assets/js/settings.js"></script>
-    <script src="../../../assets/js/todolist.js"></script>
-    <script src="../../../assets/js/jquery.cookie.js"></script>
+    <script src="../../assets/js/off-canvas.js"></script>
+    <script src="../../assets/js/misc.js"></script>
+    <script src="../../assets/js/settings.js"></script>
+    <script src="../../assets/js/todolist.js"></script>
+    <script src="../../assets/js/jquery.cookie.js"></script>
     <!-- endinject -->
   </body>
 </html>

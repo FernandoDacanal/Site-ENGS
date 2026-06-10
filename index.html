@@ -22,28 +22,6 @@
     <link rel="stylesheet" href="assets/css/darkmode.css">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="assets/images/favicon.png" />
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-          const btn = document.getElementById("theme-toggle");
-          if (localStorage.getItem("theme") === "dark") {
-              document.body.classList.add("dark-theme");
-              btn.innerHTML = "☀️";
-          }
-          btn.addEventListener("click", function () {
-
-              document.body.classList.toggle("dark-theme");
-
-              const dark = document.body.classList.contains("dark-theme");
-
-              btn.innerHTML = dark ? "☀️" : "🌙";
-
-              localStorage.setItem(
-                  "theme",
-                  dark ? "dark" : "light"
-              );
-          });
-      });
-    </script>
   </head>
   <body>
     <div class="container-scroller">
@@ -68,11 +46,6 @@
             </form>
           </div>
           <ul class="navbar-nav navbar-nav-right">
-            <li class="nav-item">
-              <button id="theme-toggle" class="btn btn-outline-secondary btn-sm">
-              🌙
-              </button>
-            </li>
             <li class="nav-item dropdown">
               <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-bs-toggle="dropdown">
                 <i class="mdi mdi-bell-outline"></i>
@@ -88,8 +61,8 @@
                     </div>
                   </div>
                   <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                    <h6 class="preview-subject font-weight-normal mb-1">Novo artigo</h6>
-                    <p class="text-gray ellipsis mb-0"> Novo artigo publicado por... </p>
+                    <h6 class="preview-subject font-weight-normal mb-1">Event today</h6>
+                    <p class="text-gray ellipsis mb-0"> Just a reminder that you have an event today </p>
                   </div>
                 </a>
                 <div class="dropdown-divider"></div>
@@ -131,8 +104,6 @@
                 </div>
               </a>
               <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
-                <a class="dropdown-item" href="#">
-                  <i class="mdi mdi-cached me-2 text-success"></i> Activity Log </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">
                   <i class="mdi mdi-logout me-2 text-primary"></i> Signout </a>
@@ -252,12 +223,6 @@
                   </li>
                 </ul>
               </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="docs/documentation.html" target="_blank">
-                <span class="menu-title">Documentation</span>
-                <i class="mdi mdi-file-document-box menu-icon"></i>
-              </a>
             </li>
           </ul>
         </nav>

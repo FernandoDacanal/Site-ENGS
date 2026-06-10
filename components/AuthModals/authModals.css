@@ -1,0 +1,235 @@
+/* Authentication Modals Styles */
+.auth-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 23, 42, 0.6); /* Slate 900 with opacity */
+  backdrop-filter: blur(8px);
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.auth-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.auth-modal-card {
+  background-color: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 420px;
+  padding: 30px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transform: translateY(20px);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  font-family: inherit;
+}
+
+.auth-modal-overlay.active .auth-modal-card {
+  transform: translateY(0);
+}
+
+.auth-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  color: var(--text-muted);
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.auth-modal-close:hover {
+  color: #ef4444;
+}
+
+.auth-modal-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.auth-modal-group {
+  margin-bottom: 18px;
+}
+
+.auth-modal-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 6px;
+}
+
+.auth-modal-input {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 14px;
+  border: 1.5px solid var(--border-color, #cbd5e1);
+  border-radius: 8px;
+  background-color: var(--card-bg, #ffffff);
+  color: var(--text-color);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.auth-modal-input:focus {
+  outline: none;
+  border-color: #a855f7;
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.15);
+}
+
+.auth-modal-input.is-invalid {
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15) !important;
+}
+
+.auth-modal-error {
+  display: none;
+  color: #ef4444;
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+.auth-modal-input.is-invalid + .auth-modal-error {
+  display: block;
+}
+
+.auth-modal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.auth-btn {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.auth-btn-primary {
+  background-color: #a855f7;
+  color: #ffffff;
+}
+
+.auth-btn-primary:hover {
+  background-color: #9333ea;
+  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);
+}
+
+.auth-btn-secondary {
+  background-color: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
+}
+
+.auth-btn-secondary:hover {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.auth-modal-link-container {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.auth-modal-link {
+  color: #a855f7;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.auth-modal-link:hover {
+  text-decoration: underline;
+  color: #9333ea;
+}
+
+/* Float Quick Access Button for Testing Modals */
+.auth-test-trigger {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+  background-color: #a855f7;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 10px 15px -3px rgba(168, 85, 247, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.auth-test-trigger:hover {
+  background-color: #9333ea;
+  transform: scale(1.05);
+}
+
+.auth-test-trigger i {
+  font-size: 24px;
+}
+
+.auth-test-menu {
+  position: fixed;
+  bottom: 80px;
+  left: 20px;
+  z-index: 1000;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+  padding: 10px;
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  animation: searchFadeIn 0.2s ease;
+}
+
+.auth-test-menu button {
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  background-color: transparent;
+  border: none;
+  color: var(--text-color);
+  text-align: left;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.auth-test-menu button:hover {
+  background-color: var(--bg-color);
+  color: #a855f7;
+}
