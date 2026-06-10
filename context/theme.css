@@ -171,3 +171,90 @@
 [data-theme="light"] .theme-toggle-item i {
   color: #6366f1 !important; /* Indigo in light theme */
 }
+
+/* ==========================================
+   DARK MODE BUG FIXES & ENHANCEMENTS
+   ========================================== */
+
+/* 1 & 2. Navbar Dropdowns (Messages, Notifications, Profile) legibility and transparency */
+[data-theme="dark"] .navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .dropdown-menu {
+  background-color: var(--card-bg) !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.5) !important;
+}
+
+[data-theme="dark"] .dropdown-menu .dropdown-item {
+  color: var(--text-color) !important;
+  background-color: transparent !important;
+}
+
+[data-theme="dark"] .dropdown-menu .dropdown-item:hover {
+  background-color: var(--bg-color) !important;
+  color: #a855f7 !important;
+}
+
+[data-theme="dark"] .dropdown-menu .dropdown-divider {
+  border-top: 1px solid var(--border-color) !important;
+}
+
+[data-theme="dark"] .dropdown-menu .dropdown-header {
+  color: var(--text-muted) !important;
+  background-color: transparent !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+[data-theme="dark"] .dropdown-menu .preview-item-content h6,
+[data-theme="dark"] .dropdown-menu .preview-item-content p {
+  color: var(--text-color) !important;
+}
+
+[data-theme="dark"] .dropdown-menu.navbar-dropdown {
+  background-color: var(--card-bg) !important;
+}
+
+/* 3. Light Mode Sidebar link readability */
+[data-theme="light"] .sidebar .nav .nav-item .nav-link .menu-title {
+  color: #3e4b5b !important;
+  font-weight: 500;
+}
+
+[data-theme="light"] .sidebar .nav .nav-item .nav-link i.menu-icon {
+  color: #b66dff !important;
+}
+
+/* 4. Auth Modals opacity correction */
+.auth-modal-card {
+  background-color: var(--card-bg, #ffffff) !important;
+  background: var(--card-bg, #ffffff) !important;
+}
+
+/* 5. Outlined "Dark" Button Visibility */
+[data-theme="dark"] .btn-outline-dark {
+  border-color: #cbd5e1 !important;
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .btn-outline-dark:hover {
+  background-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+/* 6. Inverse "Dark" Button Contrast */
+[data-theme="dark"] .btn-inverse-dark {
+  background-color: rgba(241, 245, 249, 0.1) !important;
+  color: #f1f5f9 !important;
+}
+
+/* 7. Basic Table Background and Text overrides */
+[data-theme="dark"] .table,
+[data-theme="dark"] .table tr,
+[data-theme="dark"] .table th,
+[data-theme="dark"] .table td {
+  background-color: var(--card-bg) !important;
+  color: var(--text-color) !important;
+}
+
+/* 8. Text Input search visibility */
+[data-theme="dark"] .navbar .navbar-menu-wrapper .search-field .form-control {
+  color: var(--text-color) !important;
+}
