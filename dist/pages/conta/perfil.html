@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Configurações da Conta - Note G#</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../../assets/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="../../assets/vendors/font-awesome/css/font-awesome.min.css">
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/darkmode.css">
+    <link rel="stylesheet" href="../../components/Perfil/perfil.css">
+    <link rel="shortcut icon" href="../../assets/images/favicon.png" />
+  </head>
+  <body>
+    <div class="container-scroller" id="perfil-page-container">
+      <!-- Navbar (UC02, UC03, UC05, UC13, UC17) -->
+      <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
+          <a class="navbar-brand brand-logo" href="../../index.html"><img src="../../assets/images/logo.png" alt="Note G#" /></a>
+          <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="../../assets/images/logo-mini.svg" alt="Note G#" /></a>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-stretch">
+          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+            <span class="mdi mdi-menu"></span>
+          </button>
+          <div class="search-field d-none d-md-block">
+            <form class="d-flex align-items-center h-100" action="#">
+              <div class="input-group">
+                <div class="input-group-prepend bg-transparent">
+                  <i class="input-group-text border-0 mdi mdi-magnify"></i>
+                </div>
+                <input type="text" class="form-control bg-transparent border-0" placeholder="Pesquisar projetos...">
+              </div>
+            </form>
+          </div>
+          <ul class="navbar-nav navbar-nav-right">
+            <!-- Notifications (UC17) -->
+            <li class="nav-item dropdown">
+              <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-bs-toggle="dropdown">
+                <i class="mdi mdi-bell-outline"></i>
+                <span class="count-symbol bg-danger"></span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-end navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+                <h6 class="p-3 mb-0">Notificações</h6>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <div class="preview-icon bg-success"><i class="mdi mdi-calendar"></i></div>
+                  </div>
+                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+                    <h6 class="preview-subject font-weight-normal mb-1">Novo Simpósio</h6>
+                    <p class="text-gray ellipsis mb-0">Inscrições abertas para submissão científica</p>
+                  </div>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <div class="preview-icon bg-warning"><i class="mdi mdi-comment-text-outline"></i></div>
+                  </div>
+                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+                    <h6 class="preview-subject font-weight-normal mb-1">Novo Comentário</h6>
+                    <p class="text-gray ellipsis mb-0">Mariana comentou no artigo de Vue 3</p>
+                  </div>
+                </a>
+                <div class="dropdown-divider"></div>
+                <h6 class="p-3 mb-0 text-center text-primary" style="cursor:pointer;" onclick="if(window.showToastNotification) window.showToastNotification('Todas as notificações foram marcadas como lidas.');">Ver todas as notificações</h6>
+              </div>
+            </li>
+            <!-- User Profile Dropdown (UC03) -->
+            <li class="nav-item nav-profile dropdown">
+              <!-- Dynamically populated by authModals.js -->
+            </li>
+          </ul>
+          <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+            <span class="mdi mdi-menu"></span>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Page Body Wrapper -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../../index.html">
+                <span class="menu-title">Página Inicial</span>
+                <i class="mdi mdi-home menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../pages/artigos/artigos.html">
+                <span class="menu-title">Artigos Científicos</span>
+                <i class="mdi mdi-book-open-page-variant menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../pages/foruns/foruns.html">
+                <span class="menu-title">Fóruns de Discussão</span>
+                <i class="mdi mdi-forum menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../pages/cientista/gerenciar-artigos.html">
+                <span class="menu-title">Gerenciar Artigos</span>
+                <i class="mdi mdi-file-document-edit menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../pages/admin/moderation.html">
+                <span class="menu-title">Moderação</span>
+                <i class="mdi mdi-shield-account menu-icon" style="color: #a855f7;"></i>
+              </a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="../../pages/conta/perfil.html">
+                <span class="menu-title">Configurações da Conta</span>
+                <i class="mdi mdi-account-cog menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../pages/comum/sobrenos.html">
+                <span class="menu-title">Sobre Nós</span>
+                <i class="mdi mdi-information-outline menu-icon"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Main Panel -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <!-- Header (UC08, p. 13 & 14) -->
+            <div class="page-header">
+              <h3 class="page-title">
+                <span class="page-title-icon bg-gradient-primary text-white me-2">
+                  <i class="mdi mdi-account-cog"></i>
+                </span> Configurações da Conta
+              </h3>
+              <nav aria-label="breadcrumb">
+                <ul class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="../../index.html">Início</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Configurações da Conta</li>
+                </ul>
+              </nav>
+            </div>
+
+            <!-- Two-Column Grid matching Prototype p. 14 -->
+            <div class="row">
+              <!-- LEFT COLUMN: Alterar Dados Pessoais (UC09) & Atualizar Documentação (UC10) -->
+              <div class="col-lg-6">
+                <!-- UC09: Alterar Dados Pessoais -->
+                <div class="perfil-card">
+                  <div class="perfil-card-title text-primary">
+                    <i class="mdi mdi-account-edit"></i> Alterar Dados Pessoais
+                  </div>
+                  <div class="perfil-card-subtitle">
+                    Mantenha suas informações de contato atualizadas
+                  </div>
+                  <form id="form-alterar-dados">
+                    <div class="form-group mb-3">
+                      <label class="form-label font-weight-bold" style="color:var(--text-color);">Nome Completo *</label>
+                      <input type="text" id="user-name-input" class="form-control" placeholder="Seu Nome de Usuário" maxlength="100" required>
+                    </div>
+                    <div class="form-group mb-3">
+                      <label class="form-label font-weight-bold" style="color:var(--text-color);">Endereço de E-mail *</label>
+                      <input type="email" id="user-email-input" class="form-control" placeholder="usuario@email.com" maxlength="100" required>
+                    </div>
+                    <div class="row mb-4">
+                      <div class="col-sm-6">
+                        <label class="form-label font-weight-bold" style="color:var(--text-color);">Nova Senha</label>
+                        <input type="password" id="user-new-pass" class="form-control" placeholder="Nova senha" maxlength="20">
+                      </div>
+                      <div class="col-sm-6">
+                        <label class="form-label font-weight-bold" style="color:var(--text-color);">Confirmar Senha</label>
+                        <input type="password" id="user-confirm-pass" class="form-control" placeholder="Confirmar" maxlength="20">
+                      </div>
+                    </div>
+                    <div>
+                      <button type="submit" class="btn btn-gradient-primary">Salvar Alterações</button>
+                    </div>
+                  </form>
+                </div>
+
+                <!-- UC10: Atualizar Documentação -->
+                <div class="perfil-card">
+                  <div class="perfil-card-title text-info">
+                    <i class="mdi mdi-file-check"></i> Atualizar Documentação
+                  </div>
+                  <div class="perfil-card-subtitle">
+                    Envie seus documentos de identificação obrigatórios (PDF, PNG ou JPG)
+                  </div>
+                  <form id="form-atualizar-docs">
+                    <div class="row mb-3">
+                      <div class="col-sm-6">
+                        <label class="form-label font-weight-bold" style="color:var(--text-color);">CPF do Usuário *</label>
+                        <input type="text" id="doc-cpf-input" class="form-control" placeholder="000.000.000-00" value="123.456.789-00" required>
+                      </div>
+                      <div class="col-sm-6">
+                        <label class="form-label font-weight-bold" style="color:var(--text-color);">Endereço Residencial *</label>
+                        <input type="text" id="doc-endereco-input" class="form-control" placeholder="Rua, número e cidade" value="Av. Universitária, 1000" required>
+                      </div>
+                    </div>
+                    <div class="form-group mb-3">
+                      <label class="form-label font-weight-bold" style="color:var(--text-color);">Documento de Identidade (RG/CNH) *</label>
+                      <input type="file" id="doc-file-rg" class="form-control" accept=".pdf,.png,.jpg,.jpeg">
+                      <div class="file-status-verified" id="rg-upload-status">
+                        <i class="mdi mdi-check-circle"></i> Último envio: documento_verificado.pdf
+                      </div>
+                    </div>
+                    <div class="form-group mb-4">
+                      <label class="form-label font-weight-bold" style="color:var(--text-color);">Comprovante de Residência</label>
+                      <input type="file" id="doc-file-residencia" class="form-control" accept=".pdf,.png,.jpg,.jpeg">
+                    </div>
+                    <div>
+                      <button type="submit" class="btn btn-gradient-info">Enviar Documentos</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              <!-- RIGHT COLUMN: Aplicar Para Cientista (UC11) & Excluir Conta (UC12) -->
+              <div class="col-lg-6">
+                <!-- UC11: Aplicar Para Cientista -->
+                <div class="perfil-card">
+                  <div class="perfil-card-title text-success">
+                    <i class="mdi mdi-school"></i> Aplicar Para Cientista
+                  </div>
+                  <div class="perfil-card-subtitle">
+                    Ganhe privilégios para publicar artigos científicos e liderar fóruns especializados.
+                  </div>
+                  
+                  <div id="scientist-alert" style="display:none; padding:10px 14px; background:#fef2f2; border:1px solid #f87171; color:#991b1b; border-radius:6px; font-size:12.5px; margin-bottom:15px;"></div>
+
+                  <form id="form-aplicar-cientista">
+                    <div class="form-group mb-3">
+                      <label class="form-label font-weight-bold" style="color:var(--text-color);">Link do Currículo Lattes / LinkedIn *</label>
+                      <input type="url" id="scientist-lattes" class="form-control" placeholder="https://lattes.cnpq.br/..." required>
+                    </div>
+                    <div class="form-group mb-3">
+                      <label class="form-label font-weight-bold" style="color:var(--text-color);">Área de Especialidade *</label>
+                      <select id="scientist-area" class="form-control" required>
+                        <option value="">Selecione sua área...</option>
+                        <option value="Ciência da Computação">Ciência da Computação</option>
+                        <option value="Engenharia de Software">Engenharia de Software</option>
+                        <option value="Inteligência Artificial & Dados">Inteligência Artificial &amp; Dados</option>
+                        <option value="Engenharia e Automação">Engenharia e Automação</option>
+                        <option value="Ciências Exatas e da Terra">Ciências Exatas e da Terra</option>
+                        <option value="Ciências Biológicas e Saúde">Ciências Biológicas e Saúde</option>
+                      </select>
+                    </div>
+                    <div class="form-check mb-4">
+                      <label class="form-check-label text-muted" style="font-size:13px;">
+                        <input type="checkbox" id="scientist-declaration" class="form-check-input">
+                        Declaro que as informações são verdadeiras.
+                      </label>
+                    </div>
+                    <div>
+                      <button type="submit" class="btn btn-cyan-gradient">Enviar Candidatura</button>
+                    </div>
+                  </form>
+                </div>
+
+                <!-- UC12: Excluir Conta -->
+                <div class="perfil-card">
+                  <div class="perfil-card-title text-danger">
+                    <i class="mdi mdi-account-remove"></i> Excluir Conta
+                  </div>
+                  <div class="perfil-card-subtitle">
+                    Esta ação é <strong class="text-danger">permanente</strong>. Todos os seus dados, artigos salvos e histórico do fórum serão apagados definitivamente.
+                  </div>
+
+                  <div class="danger-zone-box">
+                    <div class="form-check mb-3">
+                      <label class="form-check-label text-danger font-weight-bold" style="font-size:13px;">
+                        <input type="checkbox" id="chk-delete-confirm" class="form-check-input">
+                        Estou ciente e quero deletar minha conta.
+                      </label>
+                    </div>
+                    <button type="button" id="btn-delete-account" class="btn btn-gradient-danger" disabled>
+                      <i class="mdi mdi-delete-forever me-1"></i> Excluir Minha Conta Permanentemente
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- content-wrapper ends -->
+
+          <!-- Footer (UC01) -->
+          <footer class="footer">
+            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+              <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">
+                Copyright © 2026 Note G# - <a href="../../pages/comum/sobrenos.html">Sobre nós</a>. Todos os direitos reservados.
+              </span>
+            </div>
+          </footer>
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+
+    <!-- plugins:js -->
+    <script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="../../assets/js/off-canvas.js"></script>
+    <script src="../../assets/js/misc.js"></script>
+  </body>
+</html>

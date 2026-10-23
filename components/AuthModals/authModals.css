@@ -233,3 +233,13 @@
   background-color: var(--bg-color);
   color: #a855f7;
 }
+
+.auth-btn-danger {
+  background-color: #ef4444;
+  color: #ffffff;
+}
+
+.auth-btn-danger:hover {
+  background-color: #dc2626;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}

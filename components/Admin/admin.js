@@ -1,20 +1,7 @@
-// Admin Moderation Module
+// Admin Moderation Module (UC25, UC26, UC27, UC28, UC29)
 (function () {
   'use strict';
 
-  // Mock data as requested
-  let denuncias = [
-    { id: 1, autor: "Lucas Oliver", titulo: "O Impacto dos Buracos Negros", motivo: "Plágio Integral", data: "2026-06-08" },
-    { id: 2, autor: "Sophia Rezende", titulo: "A Nova Era dos Chips de Silício", motivo: "Fake News Científica", data: "2026-06-09" },
-    { id: 3, autor: "Enzo Almeida", titulo: "Entendendo o React sem Virtual DOM", motivo: "Linguagem Ofensiva", data: "2026-06-09" }
-  ];
-
-  let banidos = [
-    { id: 101, nome: "Gustavo Nogueira", email: "gustavo@exemplo.com", dataBan: "2026-05-15" },
-    { id: 102, nome: "Camila Vilela", email: "camila@exemplo.com", dataBan: "2026-05-22" }
-  ];
-
-  // Variables for confirmation modal state
   let pendingAction = null;
 
   if (document.readyState === 'loading') {
@@ -24,7 +11,6 @@
   }
 
   function initAdminPanel() {
-    // Check if on moderation page
     if (!document.getElementById('reports-table-body')) return;
 
     setupTabs();
@@ -44,26 +30,32 @@
         tabPanels.forEach(p => p.classList.remove('active'));
 
         btn.classList.add('active');
-        document.getElementById(target).classList.add('active');
+        const targetPanel = document.getElementById(target);
+        if (targetPanel) targetPanel.classList.add('active');
       });
     });
   }
 
   function renderTables() {
-    // 1. Render Reports Table
+    const denuncias = window.NoteGStore ? window.NoteGStore.getDenuncias() : [];
+    const banidos = window.NoteGStore ? window.NoteGStore.getBanidos() : [];
+
+    // 1. Render Reports Table (UC25)
     const reportsBody = document.getElementById('reports-table-body');
     if (reportsBody) {
       if (denuncias.length === 0) {
         reportsBody.innerHTML = `
           <tr>
-            <td colspan="5" class="text-center py-4 text-muted">Nenhuma denúncia pendente.</td>
+            <td colspan="5" class="text-center py-4 text-muted">
+              <i class="mdi mdi-checkbox-marked-circle-outline text-success me-2"></i>Nenhuma denúncia pendente no momento.
+            </td>
           </tr>
         `;
       } else {
         reportsBody.innerHTML = denuncias.map(d => `
           <tr>
             <td><strong>${d.titulo}</strong></td>
-            <td>${d.autor}</td>
+            <td><i class="mdi mdi-account-circle me-1 text-muted"></i>${d.autor}</td>
             <td><span class="badge-reason">${d.motivo}</span></td>
             <td><span class="badge-date">${d.data}</span></td>
             <td>
@@ -79,13 +71,13 @@
       }
     }
 
-    // 2. Render Banned Users Table
+    // 2. Render Banned Users Table (UC28)
     const bannedBody = document.getElementById('banned-table-body');
     if (bannedBody) {
       if (banidos.length === 0) {
         bannedBody.innerHTML = `
           <tr>
-            <td colspan="4" class="text-center py-4 text-muted">Nenhum usuário banido no momento.</td>
+            <td colspan="5" class="text-center py-4 text-muted">Nenhum usuário banido no momento.</td>
           </tr>
         `;
       } else {
@@ -125,7 +117,6 @@
 
     document.body.appendChild(modal);
 
-    // Bind overlay click to close
     modal.addEventListener('click', (e) => {
       if (e.target === modal) {
         window.AdminPanel.closeConfirm();
@@ -133,9 +124,10 @@
     });
   }
 
-  // Global interface for button clicks
   window.AdminPanel = {
+    // UC26: Banir Usuário
     confirmBan: function (denunciaId) {
+      const denuncias = window.NoteGStore ? window.NoteGStore.getDenuncias() : [];
       const den = denuncias.find(d => d.id === denunciaId);
       if (!den) return;
 
@@ -155,13 +147,16 @@
       document.getElementById('admin-confirm-modal').classList.add('active');
     },
 
+    // UC27: Rejeitar Denúncia
     confirmReject: function (denunciaId) {
+      const denuncias = window.NoteGStore ? window.NoteGStore.getDenuncias() : [];
       const den = denuncias.find(d => d.id === denunciaId);
       if (!den) return;
 
       pendingAction = {
         type: 'reject',
-        id: denunciaId
+        id: denunciaId,
+        titulo: den.titulo
       };
 
       document.getElementById('admin-confirm-title').innerText = "Rejeitar Denúncia";
@@ -174,7 +169,9 @@
       document.getElementById('admin-confirm-modal').classList.add('active');
     },
 
+    // UC29: Desbanir Usuário
     confirmUnban: function (bannedId) {
+      const banidos = window.NoteGStore ? window.NoteGStore.getBanidos() : [];
       const ban = banidos.find(b => b.id === bannedId);
       if (!ban) return;
 
@@ -195,7 +192,8 @@
     },
 
     closeConfirm: function () {
-      document.getElementById('admin-confirm-modal').classList.remove('active');
+      const modal = document.getElementById('admin-confirm-modal');
+      if (modal) modal.classList.remove('active');
       pendingAction = null;
     },
 
@@ -205,36 +203,26 @@
       const { type, id } = pendingAction;
 
       if (type === 'ban') {
-        const den = denuncias.find(d => d.id === id);
-        if (den) {
-          // Remove from reports
-          denuncias = denuncias.filter(d => d.id !== id);
-          
-          // Add to banned
-          const newBan = {
-            id: Date.now() % 1000,
-            nome: den.autor,
-            email: `${den.autor.toLowerCase().replace(' ', '')}@exemplo.com`,
-            dataBan: new Date().toISOString().split('T')[0]
-          };
-          banidos.push(newBan);
-
+        if (window.NoteGStore) {
+          const newBan = window.NoteGStore.banUserFromDenuncia(id);
           if (window.showToastNotification) {
-            window.showToastNotification(`Usuário "${den.autor}" foi banido e o artigo foi removido.`);
+            window.showToastNotification(`Usuário foi banido com sucesso e adicionado à lista de suspensões.`);
           }
         }
       } else if (type === 'reject') {
-        denuncias = denuncias.filter(d => d.id !== id);
-        if (window.showToastNotification) {
-          window.showToastNotification("A denúncia foi rejeitada com sucesso.");
+        if (window.NoteGStore) {
+          window.NoteGStore.rejectDenuncia(id);
+          if (window.showToastNotification) {
+            window.showToastNotification("A denúncia foi rejeitada com sucesso.");
+          }
         }
       } else if (type === 'unban') {
-        const banUser = banidos.find(b => b.id === id);
-        banidos = banidos.filter(b => b.id !== id);
-        
-        if (window.showToastNotification) {
-          // Document strict success text: “Usuário reativado com sucesso.”
-          window.showToastNotification("Usuário reativado com sucesso.");
+        if (window.NoteGStore) {
+          window.NoteGStore.unbanUser(id);
+          if (window.showToastNotification) {
+            // Document strict requirement: “Usuário reativado com sucesso.”
+            window.showToastNotification("Usuário reativado com sucesso.");
+          }
         }
       }
 

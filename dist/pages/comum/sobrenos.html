@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Sobre Nós - Note G#</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../../assets/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="../../assets/vendors/font-awesome/css/font-awesome.min.css">
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/darkmode.css">
+    <link rel="shortcut icon" href="../../assets/images/favicon.png" />
+  </head>
+  <body>
+    <div class="container-scroller">
+      <!-- Navbar (UC02, UC03, UC05, UC13, UC17) -->
+      <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
+          <a class="navbar-brand brand-logo" href="../../index.html"><img src="../../assets/images/logo.png" alt="Note G#" /></a>
+          <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="../../assets/images/logo-mini.svg" alt="Note G#" /></a>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-stretch">
+          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+            <span class="mdi mdi-menu"></span>
+          </button>
+          <div class="search-field d-none d-md-block">
+            <form class="d-flex align-items-center h-100" action="#">
+              <div class="input-group">
+                <div class="input-group-prepend bg-transparent">
+                  <i class="input-group-text border-0 mdi mdi-magnify"></i>
+                </div>
+                <input type="text" class="form-control bg-transparent border-0" placeholder="Pesquisar artigos...">
+              </div>
+            </form>
+          </div>
+          <ul class="navbar-nav navbar-nav-right">
+            <!-- Notifications (UC17) -->
+            <li class="nav-item dropdown">
+              <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-bs-toggle="dropdown">
+                <i class="mdi mdi-bell-outline"></i>
+                <span class="count-symbol bg-danger"></span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-end navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+                <h6 class="p-3 mb-0">Notificações</h6>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <div class="preview-icon bg-success"><i class="mdi mdi-calendar"></i></div>
+                  </div>
+                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+                    <h6 class="preview-subject font-weight-normal mb-1">Novo Simpósio</h6>
+                    <p class="text-gray ellipsis mb-0">Inscrições abertas para submissão científica</p>
+                  </div>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <div class="preview-icon bg-warning"><i class="mdi mdi-comment-text-outline"></i></div>
+                  </div>
+                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+                    <h6 class="preview-subject font-weight-normal mb-1">Novo Comentário</h6>
+                    <p class="text-gray ellipsis mb-0">Mariana comentou no artigo de Vue 3</p>
+                  </div>
+                </a>
+                <div class="dropdown-divider"></div>
+                <h6 class="p-3 mb-0 text-center text-primary" style="cursor:pointer;" onclick="if(window.showToastNotification) window.showToastNotification('Todas as notificações foram marcadas como lidas.');">Ver todas as notificações</h6>
+              </div>
+            </li>
+            <!-- User Profile Dropdown (UC03) -->
+            <li class="nav-item nav-profile dropdown">
+              <!-- Dynamically populated by authModals.js -->
+            </li>
+          </ul>
+          <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+            <span class="mdi mdi-menu"></span>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Page Body Wrapper -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../../index.html">
+                <span class="menu-title">Página Inicial</span>
+                <i class="mdi mdi-home menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../pages/artigos/artigos.html">
+                <span class="menu-title">Artigos Científicos</span>
+                <i class="mdi mdi-book-open-page-variant menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../pages/foruns/foruns.html">
+                <span class="menu-title">Fóruns de Discussão</span>
+                <i class="mdi mdi-forum menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../pages/cientista/gerenciar-artigos.html">
+                <span class="menu-title">Gerenciar Artigos</span>
+                <i class="mdi mdi-file-document-edit menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../pages/admin/moderation.html">
+                <span class="menu-title">Moderação</span>
+                <i class="mdi mdi-shield-account menu-icon" style="color: #a855f7;"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../pages/conta/perfil.html">
+                <span class="menu-title">Configurações da Conta</span>
+                <i class="mdi mdi-account-cog menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="../../pages/comum/sobrenos.html">
+                <span class="menu-title">Sobre Nós</span>
+                <i class="mdi mdi-information-outline menu-icon"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Main Panel -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <!-- Breadcrumb / Header (UC01) -->
+            <div class="page-header">
+              <h3 class="page-title">
+                <span class="page-title-icon bg-gradient-primary text-white me-2">
+                  <i class="mdi mdi-information-outline"></i>
+                </span> Sobre Nós
+              </h3>
+              <nav aria-label="breadcrumb">
+                <ul class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="../../index.html">Início</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Sobre nós</li>
+                </ul>
+              </nav>
+            </div>
+
+            <!-- Hero Welcome Card matching Prototype p. 7 -->
+            <div class="row">
+              <div class="col-12 grid-margin stretch-card">
+                <div class="card text-center p-4">
+                  <div class="card-body">
+                    <h2 class="card-title font-weight-bold mb-3" style="font-size: 26px;">Bem-vindo ao Note G#</h2>
+                    <p class="lead text-muted mx-auto" style="max-width: 750px; font-size: 16px; line-height: 1.6;">
+                      Uma plataforma colaborativa para compartilhamento de conhecimento, produção científica e discussões acadêmicas.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Two Columns Cards matching Prototype p. 7 -->
+            <div class="row">
+              <!-- Nossa Missão -->
+              <div class="col-md-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title font-weight-bold text-primary mb-3">
+                      <i class="mdi mdi-bullseye-arrow me-2"></i>Nossa Missão
+                    </h4>
+                    <p style="font-size: 14.5px; line-height: 1.8; color: var(--text-color);">
+                      O Note G# foi criado com o objetivo de facilitar o acesso ao conhecimento e incentivar a colaboração entre estudantes, pesquisadores, profissionais e entusiastas de diversas áreas.
+                    </p>
+                    <p style="font-size: 14.5px; line-height: 1.8; color: var(--text-color);">
+                      Acreditamos que o compartilhamento de informações de qualidade contribui para o avanço da ciência, da educação e da inovação.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- O Que Você Pode Fazer? -->
+              <div class="col-md-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title font-weight-bold text-success mb-3">
+                      <i class="mdi mdi-checkbox-marked-circle-outline me-2"></i>O Que Você Pode Fazer?
+                    </h4>
+                    <ul class="list-unstyled" style="font-size: 14.5px; line-height: 2; color: var(--text-color);">
+                      <li><i class="mdi mdi-check text-primary me-2"></i>Publicar artigos e conteúdos informativos</li>
+                      <li><i class="mdi mdi-check text-primary me-2"></i>Pesquisar e consultar artigos publicados</li>
+                      <li><i class="mdi mdi-check text-primary me-2"></i>Participar de fóruns de discussões acadêmicas</li>
+                      <li><i class="mdi mdi-check text-primary me-2"></i>Interagir com outros membros da comunidade científica</li>
+                      <li><i class="mdi mdi-check text-primary me-2"></i>Compartilhar conhecimento e experiências</li>
+                      <li><i class="mdi mdi-check text-primary me-2"></i>Contribuir para o crescimento contínuo da plataforma</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- content-wrapper ends -->
+
+          <!-- Footer (UC01) -->
+          <footer class="footer">
+            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+              <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">
+                Copyright © 2026 Note G# - <a href="../../pages/comum/sobrenos.html">Sobre nós</a>. Todos os direitos reservados.
+              </span>
+            </div>
+          </footer>
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+
+    <!-- plugins:js -->
+    <script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="../../assets/js/off-canvas.js"></script>
+    <script src="../../assets/js/misc.js"></script>
+  </body>
+</html>

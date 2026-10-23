@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Artigos Científicos - Note G#</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../../assets/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="../../assets/vendors/font-awesome/css/font-awesome.min.css">
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/darkmode.css">
+    <link rel="stylesheet" href="../../components/Artigos/artigos.css">
+    <link rel="shortcut icon" href="../../assets/images/favicon.png" />
+  </head>
+  <body>
+    <div class="container-scroller">
+      <!-- Navbar (UC02, UC03, UC05, UC13, UC17) -->
+      <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
+          <a class="navbar-brand brand-logo" href="../../index.html"><img src="../../assets/images/logo.png" alt="Note G#" /></a>
+          <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="../../assets/images/logo-mini.svg" alt="Note G#" /></a>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-stretch">
+          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+            <span class="mdi mdi-menu"></span>
+          </button>
+          <div class="search-field d-none d-md-block">
+            <form class="d-flex align-items-center h-100" action="#">
+              <div class="input-group">
+                <div class="input-group-prepend bg-transparent">
+                  <i class="input-group-text border-0 mdi mdi-magnify"></i>
+                </div>
+                <input type="text" class="form-control bg-transparent border-0" placeholder="Pesquisar projetos...">
+              </div>
+            </form>
+          </div>
+          <ul class="navbar-nav navbar-nav-right">
+            <!-- Notifications (UC17) -->
+            <li class="nav-item dropdown">
+              <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-bs-toggle="dropdown">
+                <i class="mdi mdi-bell-outline"></i>
+                <span class="count-symbol bg-danger"></span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-end navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+                <h6 class="p-3 mb-0">Notificações</h6>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <div class="preview-icon bg-success"><i class="mdi mdi-calendar"></i></div>
+                  </div>
+                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+                    <h6 class="preview-subject font-weight-normal mb-1">Novo Simpósio</h6>
+                    <p class="text-gray ellipsis mb-0">Inscrições abertas para submissão científica</p>
+                  </div>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <div class="preview-icon bg-warning"><i class="mdi mdi-comment-text-outline"></i></div>
+                  </div>
+                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+                    <h6 class="preview-subject font-weight-normal mb-1">Novo Comentário</h6>
+                    <p class="text-gray ellipsis mb-0">Mariana comentou no artigo de Vue 3</p>
+                  </div>
+                </a>
+                <div class="dropdown-divider"></div>
+                <h6 class="p-3 mb-0 text-center text-primary" style="cursor:pointer;" onclick="if(window.showToastNotification) window.showToastNotification('Todas as notificações foram marcadas como lidas.');">Ver todas as notificações</h6>
+              </div>
+            </li>
+            <!-- User Profile Dropdown (UC03) -->
+            <li class="nav-item nav-profile dropdown">
+              <!-- Dynamically populated by authModals.js -->
+            </li>
+          </ul>
+          <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+            <span class="mdi mdi-menu"></span>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Page Body Wrapper -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../../index.html">
+                <span class="menu-title">Página Inicial</span>
+                <i class="mdi mdi-home menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="../../pages/artigos/artigos.html">
+                <span class="menu-title">Artigos Científicos</span>
+                <i class="mdi mdi-book-open-page-variant menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../pages/foruns/foruns.html">
+                <span class="menu-title">Fóruns de Discussão</span>
+                <i class="mdi mdi-forum menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../pages/cientista/gerenciar-artigos.html">
+                <span class="menu-title">Gerenciar Artigos</span>
+                <i class="mdi mdi-file-document-edit menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../pages/admin/moderation.html">
+                <span class="menu-title">Moderação</span>
+                <i class="mdi mdi-shield-account menu-icon" style="color: #a855f7;"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../pages/conta/perfil.html">
+                <span class="menu-title">Configurações da Conta</span>
+                <i class="mdi mdi-account-cog menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../pages/comum/sobrenos.html">
+                <span class="menu-title">Sobre Nós</span>
+                <i class="mdi mdi-information-outline menu-icon"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Main Panel -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <!-- ================= VIEW 1: CATALOG OF ARTICLES (UC14, p. 20) ================= -->
+            <div id="artigos-catalog-view">
+              <div class="page-header">
+                <h3 class="page-title">
+                  <span class="page-title-icon bg-gradient-primary text-white me-2">
+                    <i class="mdi mdi-book-open-page-variant"></i>
+                  </span> Artigos Recentes <span class="badge badge-gradient-primary ms-2">Novos</span>
+                </h3>
+                <nav aria-label="breadcrumb">
+                  <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../../index.html">Início</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Artigos</li>
+                  </ul>
+                </nav>
+              </div>
+
+              <!-- Filter Bar & Search -->
+              <div class="row mb-3">
+                <div class="col-md-8">
+                  <div class="artigos-filter-bar">
+                    <button class="artigos-filter-btn active" data-cat="Todos">Todos</button>
+                    <button class="artigos-filter-btn" data-cat="Front-end">Front-end</button>
+                    <button class="artigos-filter-btn" data-cat="Banco de Dados">Banco de Dados</button>
+                    <button class="artigos-filter-btn" data-cat="Inteligência Artificial">Inteligência Artificial</button>
+                    <button class="artigos-filter-btn" data-cat="Engenharia de Software">Engenharia de Software</button>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="input-group">
+                    <input type="text" id="catalog-search-input" class="form-control" placeholder="Filtrar nesta página...">
+                    <button class="btn btn-gradient-primary" type="button"><i class="mdi mdi-magnify"></i></button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Articles Cards Grid -->
+              <div class="row" id="artigos-cards-list">
+                <!-- Dynamically populated by artigos.js -->
+              </div>
+            </div>
+
+            <!-- ================= VIEW 2: ARTICLE READING VIEW (UC14, UC15, UC16, p. 21) ================= -->
+            <div id="artigos-reading-view" class="reading-container">
+              <!-- Top action bar -->
+              <div class="reading-header-bar">
+                <div>
+                  <span id="reading-cat-badge" class="reading-badge me-2">Front-end</span>
+                  <span id="reading-date" class="text-muted" style="font-size: 13px;"></span>
+                </div>
+                <button class="btn-back-list" onclick="window.ArtigosApp.closeArticle()">
+                  <i class="mdi mdi-arrow-left"></i> Voltar para a lista
+                </button>
+              </div>
+
+              <!-- Article Content + Right Sidebar Grid -->
+              <div class="row">
+                <!-- Main Reading Column -->
+                <div class="col-lg-8 grid-margin stretch-card">
+                  <div class="card">
+                    <div class="card-body p-4 p-md-5">
+                      <div class="d-flex align-items-center mb-2">
+                        <span class="badge badge-gradient-success me-2">Lendo Artigo</span>
+                      </div>
+                      
+                      <h1 class="reading-title" id="reading-title"></h1>
+                      
+                      <div class="reading-body" id="reading-body">
+                        <!-- Injected text -->
+                      </div>
+
+                      <!-- Callout Quote (as shown in prototype p. 21) -->
+                      <div class="reading-quote" id="reading-quote-box"></div>
+
+                      <!-- Interaction Bar (UC15: Curtir, Compartilhar, Denunciar) -->
+                      <div class="artigo-interactions-bar">
+                        <button class="btn-interaction" id="btn-like-article" onclick="window.ArtigosApp.toggleLike()">
+                          <i class="mdi mdi-thumb-up-outline"></i> Curtir Artigo (<span id="like-count">0</span>)
+                        </button>
+                        <button class="btn-interaction" onclick="window.ArtigosApp.openShareModal()">
+                          <i class="mdi mdi-share-variant"></i> Compartilhar
+                        </button>
+                        <button class="btn-interaction btn-interaction-report" onclick="window.ArtigosApp.openReportModal()">
+                          <i class="mdi mdi-alert-circle-outline"></i> Denunciar Artigo
+                        </button>
+                      </div>
+
+                      <!-- Comments Section (UC15, p. 22) -->
+                      <div class="comments-section">
+                        <h4 class="font-weight-bold mb-4" id="comments-count" style="color:var(--text-color);">Comentários</h4>
+                        
+                        <div id="comments-list">
+                          <!-- Injected by artigos.js -->
+                        </div>
+
+                        <!-- Add Comment Form -->
+                        <div class="comment-form-container">
+                          <h6 class="font-weight-bold mb-3" style="color:var(--text-color);">Participe da conversa</h6>
+                          <div class="form-group mb-3">
+                            <textarea id="comment-input" class="form-control" rows="3" placeholder="Escreva seu comentário sobre este artigo..."></textarea>
+                          </div>
+                          <div class="text-end">
+                            <button class="btn btn-gradient-primary" type="button" onclick="window.ArtigosApp.submitComment()">
+                              Enviar Comentário
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Right Sidebar Metadata (as in prototype p. 21) -->
+                <div class="col-lg-4">
+                  <!-- Autor Principal -->
+                  <div class="sidebar-info-card">
+                    <div class="sidebar-info-title">Autor Principal</div>
+                    <div class="author-pill">
+                      <img src="../../assets/images/faces/face10.jpg" class="author-pill-img" alt="Autor">
+                      <div>
+                        <h6 class="mb-0 font-weight-bold" id="author-name" style="color:var(--text-color);">Lucas Almeida</h6>
+                        <small class="text-muted" id="author-role">Cientista da Computação</small>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Colaboradores -->
+                  <div class="sidebar-info-card" id="collab-card">
+                    <div class="sidebar-info-title">Colaboradores</div>
+                    <div id="collab-list" class="d-flex flex-wrap"></div>
+                  </div>
+
+                  <!-- Tempo Estimado -->
+                  <div class="sidebar-info-card">
+                    <div class="sidebar-info-title">Tempo Estimado</div>
+                    <div class="d-flex align-items-center text-primary font-weight-bold">
+                      <i class="mdi mdi-clock-outline me-2" style="font-size:20px;"></i>
+                      <span id="read-time">5 minutos de leitura</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- content-wrapper ends -->
+
+          <!-- Footer (UC01) -->
+          <footer class="footer">
+            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+              <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">
+                Copyright © 2026 Note G# - <a href="../../pages/comum/sobrenos.html">Sobre nós</a>. Todos os direitos reservados.
+              </span>
+            </div>
+          </footer>
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+
+    <!-- plugins:js -->
+    <script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="../../assets/js/off-canvas.js"></script>
+    <script src="../../assets/js/misc.js"></script>
+  </body>
+</html>
